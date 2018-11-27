@@ -57,7 +57,7 @@
 
         &.open {
           &::before {
-            transform: rotate(135deg) translateX(0.275rem);
+            transform: rotate(-45deg) translateX(-0.275rem);
           }
 
           &::after {
