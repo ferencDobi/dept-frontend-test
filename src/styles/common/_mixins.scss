@@ -1,0 +1,27 @@
+@import '../../../node_modules/sass-ignis/src/main';
+@import './constants';
+
+@mixin arrow-on-hover() {
+  &::before {
+    opacity: 0;
+    content: "";
+    font-size: 0;
+    position: relative;
+    top: -1.5rem;
+    left: -2rem;
+    width: 0;
+    height: 0;
+    border-top: 1rem solid transparent;
+    border-bottom: 1rem solid transparent;
+    border-left: (2rem * 0.866) solid $contrast-color;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+      left: -1.3rem;
+      transition: all .4s $ease-in-out-quad;
+    }
+  }
+}
+

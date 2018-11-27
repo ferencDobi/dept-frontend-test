@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 
 const ITEMS = [
     "Home",
@@ -14,7 +14,14 @@ const ITEMS = [
 export const Menu = () => {
   return (
     <ul>
-      {ITEMS.map(item => <li key={item}>{item}</li>)}
+      {ITEMS.map((item) => {
+        return (
+          <Fragment>
+            <li key={item}>{item}</li>
+            <div className="line" />
+          </Fragment>
+        );
+      })}
     </ul>
   );
 };
