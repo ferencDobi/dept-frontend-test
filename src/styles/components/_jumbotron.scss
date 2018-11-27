@@ -1,0 +1,70 @@
+@import '../common/constants';
+
+.jumbotron {
+  background-image: url("https://via.placeholder.com/2000");
+  width: 98vw;
+  height: 58.75rem;
+  margin: 1vw;
+
+  nav {
+    width: 85vw;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.0625rem solid $primary-color;
+    margin: 1rem auto;
+    text-transform: uppercase;
+
+    svg {
+      height: 1.75rem;
+      width: 6.25rem;
+      padding: 2rem 0;
+    }
+
+    button {
+      background: none;
+      border: none;
+      padding: 0;
+      color: $primary-color;
+      align-self: flex-end;
+      height: 3rem;
+
+      %menu-bar {
+        width: 1.25rem;
+        height: 0.125rem;
+        background-color: $primary-color;
+        position: absolute;
+        right: 6.5vw;
+        content: "";
+        display: block;
+        transition: .3s cubic-bezier(.455, .03, .515, .955);
+      }
+
+      h3 {
+        margin: 0;
+        font-family: $primary-font;
+        padding-right: 2.875rem;
+        font-size: 1.125rem;
+
+        &::before {
+          @extend %menu-bar;
+          top: 4.7875rem;
+        }
+
+        &::after {
+          @extend %menu-bar;
+          top: 5.2375rem;
+        }
+
+        &.open {
+          &::before {
+            transform: rotate(135deg) translateX(0.275rem);
+          }
+
+          &::after {
+            transform: rotate(45deg) translateX(-0.275rem);
+          }
+        }
+      }
+    }
+  }
+}
