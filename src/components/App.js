@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/App.scss';
-import {Jumbotron} from "./Jumbotron";
+import {Header} from "./Header";
 import {PageBody} from "./PageBody";
 import {Footer} from "./Footer";
 
@@ -10,8 +10,13 @@ class App extends Component {
     scrolledToTop: true
   };
 
+  toggleScrollPrevent = () => {
+    if (this.state.menuIsOpen) document.body.classList.add("no-scroll");
+    else document.body.classList.remove("no-scroll");
+  };
+
   toggleMenu = () => {
-    this.setState(prevState => ({menuIsOpen: !prevState.menuIsOpen}));
+    this.setState(prevState => ({menuIsOpen: !prevState.menuIsOpen}), this.toggleScrollPrevent);
   };
 
   componentDidMount() {
@@ -28,8 +33,8 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Jumbotron {...this.state} toggleMenu={this.toggleMenu} />
+      <div>
+        <Header {...this.state} toggleMenu={this.toggleMenu} />
         <PageBody />
         <Footer />
       </div>
