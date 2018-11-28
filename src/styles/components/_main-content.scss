@@ -1,0 +1,53 @@
+@import '../common/constants';
+@import '../common/mixins';
+
+.main-content {
+  width: 85vw;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: 36rem;
+  grid-gap: 1rem;
+
+  div {
+    grid-column: span 6;
+    display: inline-block;
+    width: 40vw;
+    margin: 1rem;
+
+    img {
+      width: 40vw;
+      background-image: url('https://picsum.photos/1400/940/?random');
+    }
+
+    h3 {
+      @include label;
+      color: $light-label-color;
+    }
+
+    h1 {
+      @include heading(1.875rem, $capitalize: false);
+      color: $title-color;
+    }
+
+    button {
+      @include label(0.875rem);
+      border: none;
+      background: none;
+      color: $highlight-color;
+      padding-left: 1rem;
+      cursor: pointer;
+
+      &:hover {
+        font-size: 1rem;
+        transition: .3s $ease-in-out-quad;
+      }
+
+      &::before {
+        @include right-arrow(0.625rem, $highlight-color);
+        top: -0.3rem;
+        left: -1rem;
+      }
+    }
+  }
+}
