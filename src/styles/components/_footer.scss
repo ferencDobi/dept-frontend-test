@@ -42,6 +42,11 @@
         @include heading(1.125rem);
         margin: 0 0.825rem;
         cursor: pointer;
+
+        &:hover {
+          color: $highlight-color;
+          transition: color .3s $ease-in-out-quad;
+        }
       }
     }
 

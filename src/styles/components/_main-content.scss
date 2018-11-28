@@ -39,8 +39,13 @@
       cursor: pointer;
 
       &:hover {
-        font-size: 1rem;
-        transition: .3s $ease-in-out-quad;
+        padding-left: 2rem;
+        transition: all .3s $ease-in-out-quad;
+
+        &::before {
+          left: -2rem;
+          transition: all .3s $ease-in-out-quad;
+        }
       }
 
       &::before {
