@@ -2,7 +2,7 @@
 @import '../common/mixins';
 
 .jumbotron {
-  background-image: url("https://via.placeholder.com/2000");
+  background-image: url("https://picsum.photos/1400/940?image=1061");
   width: 98vw;
   height: 58.75rem;
   margin: 1vw;
@@ -70,12 +70,7 @@
     padding-top: 6rem;
     padding-left: 0;
     color: $contrast-color;
-    font: {
-      family: $label-font;
-      size: 5rem;
-    }
-    line-height: 1;
-    text-transform: uppercase;
+    @include heading(5rem);
     list-style: none;
     text-align: right;
     width: 25vw;

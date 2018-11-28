@@ -1,0 +1,27 @@
+@import '../common/constants';
+@import '../common/mixins';
+
+.client-list {
+  background: $light-background;
+  width: 98vw;
+  margin: 1vw;
+  padding: 5rem 0;
+  text-align: center;
+
+  h1 {
+    @include heading(3.75rem);
+    width: 45vw;
+    margin: 0 auto 1.25rem auto;
+  }
+
+  p {
+    @include text(1.25rem);
+    width: 45vw;
+    margin: 0 auto;
+  }
+
+  .gallery {
+    width: 80vw;
+    margin: 5rem auto 0 auto;
+  }
+}

@@ -25,3 +25,21 @@
   }
 }
 
+@mixin heading($size) {
+  font: {
+    family: $label-font;
+    size: $size;
+    weight: normal;
+  }
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@mixin text($size) {
+  font: {
+    family: $text-font;
+    size: $size;
+    weight: normal;
+  }
+  line-height: 1.59;
+}

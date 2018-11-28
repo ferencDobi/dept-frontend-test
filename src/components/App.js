@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../styles/App.scss';
-import {Logo} from "./Logo";
-import {Menu} from './Menu';
+import {Jumbotron} from "./Jumbotron";
+import {PageBody} from "./PageBody";
+import {Footer} from "./Footer";
 
 class App extends Component {
   state = {
@@ -15,15 +16,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className={'jumbotron' + (this.state.menuIsOpen ? ' open' : '')}>
-          <nav>
-            <Logo />
-            <button onClick={this.toggleMenu}>
-              <h3 className={this.state.menuIsOpen ? "open" : ""}>Menu</h3>
-            </button>
-          </nav>
-          <Menu />
-        </div>
+        <Jumbotron menuIsOpen={this.state.menuIsOpen} toggleMenu={this.toggleMenu} />
+        <PageBody />
+        <Footer />
       </div>
     );
   }
