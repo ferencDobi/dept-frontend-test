@@ -19,7 +19,7 @@ export const Legal = () => {
         {LINKS.map(link => <a href={link.route} key={link.target}>{link.target}</a>)}
       </div>
       <div>
-        {LEGALS.map(legal => <p>{legal}</p>)}
+        {LEGALS.map((legal, i) => <p key={i}>{legal}</p>)}
       </div>
     </div>
   );

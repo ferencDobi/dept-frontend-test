@@ -18,15 +18,49 @@
     @include text(1.25rem);
     width: 45vw;
     margin: 0 auto;
+
+    @media screen and (max-width: 960px) {
+      width: 65vw;
+      font-size: 1.20rem;
+    }
+
+    @media screen and (max-width: 560px) {
+      width: 85vw;
+      font-size: 1.15rem;
+    }
+
   }
 
   .gallery {
     width: 80vw;
     margin: 5rem auto 0 auto;
 
+    a {
+      @media screen and (max-width: 839px) {
+        &:nth-of-type(n+7) {
+          display: none;
+        }
+      }
+
+      @media screen and (max-width: 399px) {
+        &:nth-of-type(n+4) {
+          display: none;
+        }
+      }
+    }
+
     img {
       width: 12rem;
       margin: 1rem 2rem;
+
+      @media screen and (max-width: 960px) {
+        width: 10rem;
+      }
+
+      @media screen and (max-width: 560px) {
+        width: 8rem;
+        margin: 1rem;
+      }
     }
   }
 }

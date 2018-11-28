@@ -22,10 +22,8 @@ class App extends Component {
   componentDidMount() {
     window.onscroll = () => {
       if (window.scrollY > 200) {
-        console.log("scrolled down");
         this.setState({scrolledToTop: false});
       } else {
-        console.log("scrolled up");
         this.setState({scrolledToTop: true});
       }
     }
