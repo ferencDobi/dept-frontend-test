@@ -12,7 +12,7 @@
 
   @media screen and (max-width: 650px) {
     padding: 1rem 0;
-    height: 23.5rem;
+    height: 100%;
   }
 
   a {
@@ -64,6 +64,7 @@
         @media screen and (max-width: 650px) {
           display: block;
           margin: 0.825rem 0;
+          font-size: 1.725rem;
         }
       }
 
@@ -86,6 +87,7 @@
       @media screen and (max-width: 650px) {
         display: block;
         margin: 0.825rem 0;
+        font-size: 1.725rem;
       }
     }
   }
