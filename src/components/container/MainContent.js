@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import ContentApi from "../api/ContentApi";
-import {Card} from "./Card";
+import ContentApi from "../../api/ContentApi";
+import {Card} from "../presentational/Card";
 
 export class MainContent extends Component {
   state = { articles: [] };

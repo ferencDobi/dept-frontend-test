@@ -13,7 +13,7 @@ export const Header = ({scrolledToTop, menuIsOpen, toggleMenu}) => {
 
   return (
     <Fragment>
-      <NavBar className={calculateClasses()}>
+      <NavBar className={calculateClasses("header-nav")}>
         <button onClick={toggleMenu}>
           <h3 className={menuIsOpen ? "open" : ""}>Menu</h3>
         </button>

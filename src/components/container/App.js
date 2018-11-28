@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import '../styles/App.scss';
-import {Header} from "./Header";
-import {PageBody} from "./PageBody";
-import {Footer} from "./Footer";
+import '../../styles/App.scss';
+import {Header} from "../presentational/Header";
+import {PageBody} from "../presentational/PageBody";
+import {Footer} from "../presentational/Footer";
 
 class App extends Component {
   state = {

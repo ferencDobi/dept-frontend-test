@@ -1,5 +1,5 @@
 import React from 'react';
-import {MainContent} from "./MainContent";
+import {MainContent} from "../container/MainContent";
 import {ClientList} from "./ClientList";
 import {ContactForm} from "./ContactForm";
 
