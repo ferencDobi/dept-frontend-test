@@ -6,6 +6,16 @@ html {
   overflow: hidden;
 }
 
-button::-moz-focus-inner {
-  border: 0;
+button {
+  &::-moz-focus-inner {
+    border: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.selector:not(*:root), .jumbotron.open ul::after {
+  display: none;
 }
