@@ -1,9 +1,9 @@
 import React from 'react';
 import {Logo} from "./Logo";
 
-export const NavBar = ({children}) => {
+export const NavBar = ({className, children}) => {
   return (
-      <nav>
+      <nav className={className}>
         <Logo />
         {children}
       </nav>
