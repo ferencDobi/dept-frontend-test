@@ -1,6 +1,6 @@
 import React from "react";
 
-const text = `Question?  We are here to help!`;
+const text = 'Question? We are here to help!';
 
 export const ContactForm = () => {
   return (
