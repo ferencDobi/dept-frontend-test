@@ -28,6 +28,7 @@
 
     img {
       width: 40vw;
+      transition: all .5s $ease-in-out-quad;
 
       @media screen and (max-width: 700px) {
         width: 80vw;
@@ -51,11 +52,13 @@
       color: $highlight-color;
       padding-left: 1rem;
       cursor: pointer;
+      transition: all .3s $ease-in-out-quad;
 
       &::before {
         @include right-arrow(0.625rem, $highlight-color);
         top: -0.3rem;
         left: -1rem;
+        transition: all .3s $ease-in-out-quad;
       }
 
       @media screen and (max-width: 700px) {
@@ -72,11 +75,11 @@
       }
 
       button {
-        padding-left: 2rem;
+        padding-left: 1.75rem;
         transition: all .3s $ease-in-out-quad;
 
         &::before {
-          left: -2rem;
+          left: -1.75rem;
           transition: all .3s $ease-in-out-quad;
         }
       }
