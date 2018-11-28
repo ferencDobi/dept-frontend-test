@@ -1,4 +1,3 @@
-@import '../../../node_modules/sass-ignis/src/main';
 @import './constants';
 
 @mixin right-arrow($size, $color) {
@@ -12,12 +11,12 @@
   border-left: ($size * 0.866) solid $color;
 }
 
-@mixin arrow-on-hover() {
+@mixin arrow-on-hover($size) {
   &::before {
     opacity: 0;
-    @include right-arrow(2rem, $contrast-color);
-    top: -1.5rem;
-    left: -2rem;
+    @include right-arrow($size, $contrast-color);
+    top: ($size - ($size * 2 - 0.5));
+    left: ($size - ($size * 2));
   }
 
   &:hover {

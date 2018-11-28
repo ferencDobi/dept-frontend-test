@@ -54,34 +54,25 @@
 
       li {
         cursor: pointer;
-        @include arrow-on-hover;
+        @include arrow-on-hover(2rem);
+
+        @media screen and (max-width: 1000px) {
+          @include arrow-on-hover(1.75rem);
+        }
+
+        @media screen and (max-width: 700px) {
+          @include arrow-on-hover(1.5rem);
+        }
+
+        @media screen and (max-width: 400px) {
+          @include arrow-on-hover(1.25rem);
+        }
+
+
 
         &:hover {
           color: $contrast-color;
         }
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 1rem;
-        right: 0;
-        height: 100vh;
-        width: 25vw;
-        padding: 5.675rem;
-        background: ig-easing-gradient(
-                        radial,
-                        farthest-corner,
-                        rgba(14,14,14,1) 0%,
-                        ease-in-out-quad,
-                        rgba(14,14,14,0) 50%,
-                        ease-in-out-quad,
-                        rgba(14,14,14,1) 100%
-        ) fixed;
-      }
-
-      &:hover::after {
-        pointer-events: none;
       }
 
       .line {

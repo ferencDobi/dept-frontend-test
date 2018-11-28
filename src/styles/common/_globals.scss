@@ -15,7 +15,3 @@ button {
     outline: none;
   }
 }
-
-.selector:not(*:root), .jumbotron.open ul::after {
-  display: none;
-}
