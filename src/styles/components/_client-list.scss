@@ -23,5 +23,10 @@
   .gallery {
     width: 80vw;
     margin: 5rem auto 0 auto;
+
+    img {
+      width: 12rem;
+      margin: 1rem 2rem;
+    }
   }
 }

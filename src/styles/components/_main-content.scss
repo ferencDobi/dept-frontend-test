@@ -27,14 +27,8 @@
     }
 
     img {
-      background-image: url('https://picsum.photos/1400/940/?random');
       width: 40vw;
-      cursor: pointer;
-
-      &:hover {
-        transform: scale(0.95);
-        transition: transform .5s $ease-in-out-quad;
-      }
+      background-image: url('https://picsum.photos/1400/940/?random');
 
       @media screen and (max-width: 700px) {
         width: 80vw;
@@ -59,16 +53,6 @@
       padding-left: 1rem;
       cursor: pointer;
 
-      &:hover {
-        padding-left: 2rem;
-        transition: all .3s $ease-in-out-quad;
-
-        &::before {
-          left: -2rem;
-          transition: all .3s $ease-in-out-quad;
-        }
-      }
-
       &::before {
         @include right-arrow(0.625rem, $highlight-color);
         top: -0.3rem;
@@ -77,6 +61,25 @@
 
       @media screen and (max-width: 700px) {
         display: none;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      img {
+        transform: scale(0.95);
+        transition: transform .5s $ease-in-out-quad;
+      }
+
+      button {
+        padding-left: 2rem;
+        transition: all .3s $ease-in-out-quad;
+
+        &::before {
+          left: -2rem;
+          transition: all .3s $ease-in-out-quad;
+        }
       }
     }
   }
