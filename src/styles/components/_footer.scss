@@ -1,0 +1,91 @@
+@import '../common/constants';
+@import '../common/mixins';
+
+.footer {
+  background: $primary-color;
+  color: $contrast-color;
+  width: 98vw;
+  height: 21.25rem;
+  margin: 0 auto;
+  padding: 6.25rem 0;
+  box-sizing: border-box;
+
+  a {
+    color: $contrast-color;
+    margin: 0 0.825rem;
+  }
+
+  nav {
+    width: 85vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.0625rem solid $shade-color;
+    margin: 1rem auto;
+    text-transform: uppercase;
+
+    svg {
+      height: 1.75rem;
+      width: 6.25rem;
+      padding: 1.5rem 0;
+      fill: $contrast-color;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-left: 9.375rem;
+      margin-right: auto;
+
+      li {
+        display: inline;
+        @include heading(1.125rem);
+        margin: 0 0.825rem;
+        cursor: pointer;
+      }
+    }
+
+    a {
+      text-decoration: none;
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .legal {
+    @include text(0.8125rem);
+    display: flex;
+    justify-content: space-between;
+    width: 85vw;
+    margin: 1rem auto;
+    padding-left: 15.5rem;
+    box-sizing: border-box;
+
+    > div {
+      display: inline;
+
+      &:last-of-type {
+        p:last-of-type {
+          display: block;
+          text-align: end;
+        }
+      }
+    }
+
+    a {
+      color: $light-shade;
+
+      &:hover {
+        color: $contrast-color;
+      }
+    }
+
+    p {
+      color: $light-shade;
+      display: inline;
+      margin: 0 0 0 1.65rem;
+    }
+  }
+}

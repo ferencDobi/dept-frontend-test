@@ -8,17 +8,28 @@ const ITEMS = [
     "Partners",
     "Stories",
     "Careers",
-    "Contacts"
+    "Contact"
 ];
 
-export const Menu = () => {
+const ITEMS_COMPACT = [
+    "Work",
+    "Service",
+    "Stories",
+    "About",
+    "Careers",
+    "Contact"
+];
+
+export const Menu = ({compact}) => {
+  let items = compact ? ITEMS_COMPACT : ITEMS;
+
   return (
     <ul>
-      {ITEMS.map((item) => {
+      {items.map((item) => {
         return (
-          <Fragment>
-            <li key={item}>{item}</li>
-            <div className="line" />
+          <Fragment key={item}>
+            <li>{item}</li>
+            {compact ? '' : <div className="line" />}
           </Fragment>
         );
       })}
