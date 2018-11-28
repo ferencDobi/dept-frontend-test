@@ -9,7 +9,7 @@
   text-align: center;
 
   h1 {
-    @include heading(3.75rem);
+    @include heading;
     width: 45vw;
     margin: 0 auto 1.25rem auto;
   }

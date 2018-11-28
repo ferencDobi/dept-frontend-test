@@ -25,9 +25,9 @@
   }
 }
 
-@mixin heading($size) {
+@mixin heading($size: 3.75rem) {
   font: {
-    family: $label-font;
+    family: $heading-font;
     size: $size;
     weight: normal;
   }
@@ -42,4 +42,14 @@
     weight: normal;
   }
   line-height: 1.59;
+}
+
+@mixin label($size: 0.9375rem) {
+  font: {
+    family: $text-font;
+    size: $size;
+    weight: bold;
+  }
+  line-height: 2;
+  text-transform: uppercase;
 }

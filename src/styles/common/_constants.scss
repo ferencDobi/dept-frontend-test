@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Karla');
 
 // FONTS
-$label-font: 'Teko', sans-serif;
+$heading-font: 'Teko', sans-serif;
 $text-font: 'Karla', sans-serif;
 
 // COLORS
@@ -11,6 +11,8 @@ $contrast-color: white;
 $shade-color: #3e3e3e;
 $line-color: #a3a3a3;
 $light-background: #f3f6f6;
+$field-underline: #dddddd;
+$highlight-color: #1a18f7;
 
 // TRANSITIONS
 $ease-in-out-quad: cubic-bezier(.455, .03, .515, .955);

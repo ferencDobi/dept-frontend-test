@@ -1,0 +1,62 @@
+@import '../common/constants';
+@import '../common/mixins';
+
+.contact-form {
+  width: 70vw;
+  height: 22.5rem;
+  margin: 5rem 7.5rem;
+  display: grid;
+  grid: 1fr 2.5fr 1fr / repeat(3, 1fr);
+  grid-gap: 3.125rem;
+  grid-template-areas:
+          "head name mail"
+          "head mesg null"
+          "head send null";
+
+  h1 {
+    grid-area: head;
+    @include heading;
+    margin-top: 0;
+  }
+
+  > div {
+    label {
+      @include label;
+      display: block;
+    }
+
+    input, textarea {
+      border-style: none;
+      border-bottom: 0.125rem solid $field-underline;
+      margin: 1rem 0 0 0;
+      width: 17.5rem;
+    }
+
+    textarea {
+      resize: none;
+    }
+  }
+
+  .name-field {
+    grid-area: name;
+  }
+
+  .email-field {
+    grid-area: mail;
+  }
+
+  .message-box {
+    grid-area: mesg;
+  }
+
+  button {
+    grid-area: send;
+    background: $highlight-color;
+    @include label;
+    color: $contrast-color;
+    width: 8.75rem;
+    height: 3.125rem;
+    border: none;
+  }
+
+}
