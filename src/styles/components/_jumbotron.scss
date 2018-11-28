@@ -40,8 +40,8 @@
         width: 1.25rem;
         height: 0.125rem;
         background-color: $primary-color;
-        position: fixed;
-        right: 5.35rem;
+        position: relative;
+        right: -3.5rem;
         content: "";
         display: block;
         transition: all .5s $ease-in-out-quad;
@@ -55,12 +55,12 @@
 
         &::before {
           @extend %menu-bar;
-          top: 4.15rem;
+          top: 0.5rem;
         }
 
         &::after {
           @extend %menu-bar;
-          top: 4.55rem;
+          top: -0.80rem;
         }
       }
     }
@@ -84,23 +84,6 @@
       button {
         margin-right: 4rem;
         transition: all .5s $ease-in-out-quad;
-      }
-
-      %menu-bar {
-        right: 4.15rem !important;
-        transition: all .5s $ease-in-out-quad;
-      }
-
-      h3 {
-        &::before {
-          @extend %menu-bar;
-          top: 1.75rem;
-        }
-
-        &::after {
-          @extend %menu-bar;
-          top: 2.15rem;
-        }
       }
     }
   }
