@@ -10,6 +10,11 @@
   padding: 6.25rem 0;
   box-sizing: border-box;
 
+  @media screen and (max-width: 650px) {
+    padding: 1rem 0;
+    height: 23.5rem;
+  }
+
   a {
     color: $contrast-color;
     margin: 0 0.825rem;
@@ -24,11 +29,19 @@
     margin: 1rem auto;
     text-transform: uppercase;
 
-    svg {
+    @media screen and (max-width: 650px) {
+      align-items: flex-start;
+    }
+
+    > svg {
       height: 1.75rem;
       width: 6.25rem;
       padding: 1.5rem 0;
       fill: $contrast-color;
+
+      @media screen and (max-width: 925px) {
+        display: none;
+      }
     }
 
     ul {
@@ -47,6 +60,19 @@
           color: $highlight-color;
           transition: color .3s $ease-in-out-quad;
         }
+
+        @media screen and (max-width: 650px) {
+          display: block;
+          margin: 0.825rem 0;
+        }
+      }
+
+      @media screen and (max-width: 925px) {
+        margin-left: 0;
+      }
+
+      @media screen and (max-width: 650px) {
+        margin-top: 0;
       }
     }
 
@@ -55,6 +81,11 @@
 
       &:last-of-type {
         margin-right: 0;
+      }
+
+      @media screen and (max-width: 650px) {
+        display: block;
+        margin: 0.825rem 0;
       }
     }
   }
@@ -72,11 +103,27 @@
       display: inline;
 
       &:last-of-type {
-        p:last-of-type {
-          display: block;
-          text-align: end;
+        p {
+          &:last-of-type {
+            display: block;
+            text-align: end;
+          }
+
+          @media screen and (max-width: 1100px) {
+            display: block;
+            text-align: end;
+          }
         }
       }
+
+      @media screen and (max-width: 650px) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    @media screen and (max-width: 925px) {
+      padding-left: 0;
     }
 
     a {
@@ -84,6 +131,10 @@
 
       &:hover {
         color: $contrast-color;
+      }
+
+      @media screen and (max-width: 650px) {
+        margin: 0;
       }
     }
 
