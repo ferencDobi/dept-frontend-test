@@ -3,11 +3,18 @@
 
 .main-content {
   width: 85vw;
-  margin: 1rem auto;
+  margin: 3.5rem auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: 36rem;
-  grid-gap: 1rem;
+  grid-auto-rows: auto;
+  grid-gap: 2.5vw;
+
+  @media screen and (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-gap: 0;
+  }
 
   div {
     grid-column: span 6;
@@ -15,9 +22,23 @@
     width: 40vw;
     margin: 1rem;
 
+    @media screen and (max-width: 700px) {
+      width: 80vw;
+    }
+
     img {
-      width: 40vw;
       background-image: url('https://picsum.photos/1400/940/?random');
+      width: 40vw;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(0.95);
+        transition: transform .5s $ease-in-out-quad;
+      }
+
+      @media screen and (max-width: 700px) {
+        width: 80vw;
+      }
     }
 
     h3 {
@@ -52,6 +73,10 @@
         @include right-arrow(0.625rem, $highlight-color);
         top: -0.3rem;
         left: -1rem;
+      }
+
+      @media screen and (max-width: 700px) {
+        display: none;
       }
     }
   }
