@@ -6,7 +6,9 @@ export class MainContent extends Component {
   state = { articles: [] };
 
   componentDidMount() {
-    this.setState({articles: ContentApi.fetchArticles()});
+    ContentApi.fetchCases(15).then(response => {
+      this.setState({articles: response.data})
+    }).catch(error => console.error(error));
   }
 
   render() {
