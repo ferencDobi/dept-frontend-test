@@ -1,21 +1,21 @@
 import React, {Component} from "react";
-import ContentApi from "../../api/ContentApi";
 import {Card} from "../presentational/Card";
+import {connect} from "react-redux";
 
-export class MainContent extends Component {
-  state = { articles: [] };
-
-  componentDidMount() {
-    ContentApi.fetchCases(15).then(response => {
-      this.setState({articles: response.data})
-    }).catch(error => console.error(error));
-  }
-
+class MainContent extends Component {
   render() {
     return (
       <div className="main-content">
-        {this.state.articles.map(article => <Card key={article.id} article={article} />)}
+        {this.props.articles.map(article => <Card key={article.id} article={article} />)}
       </div>
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    articles: state.caseReducer
+  };
+};
+
+export default connect(mapStateToProps)(MainContent);
