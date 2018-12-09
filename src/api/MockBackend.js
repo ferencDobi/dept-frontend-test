@@ -1,11 +1,11 @@
 /*
 *  This is a dynamic content generator to be served up as a mock API by json-server.
-*  To run this file as a fake backend server, first install its dependencies:
+*  To run this file manually as a fake backend server, first install its dependencies:
 *     $ npm install
-*  Next, navigate into its directory:
-*     $ cd src/api
-*  Then run the server using the following command:
-*     $ json-server MockBackend.js
+*  Then run the server from the project's root directory using the following command:
+*     $ json-server src/api/MockBackend.js
+*  Alternatively, you can start both the fake backend server and the frontend server in development mode with:
+*     $ npm start
 */
 
 module.exports = () => {
