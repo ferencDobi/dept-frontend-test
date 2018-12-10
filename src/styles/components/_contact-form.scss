@@ -63,15 +63,21 @@
 
       @media screen and (max-width: 700px) {
         width: 80vw;
+        margin-bottom: 1rem;
       }
-    }
-
-    input {
-      margin-bottom: 1rem;
     }
 
     textarea {
       resize: none;
+    }
+
+    p {
+      position: absolute;
+      margin: 0.625rem 0 0 0;
+
+      @media screen and (max-width: 700px) {
+        margin-top: -0.625rem;
+      }
     }
   }
 
