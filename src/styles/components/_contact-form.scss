@@ -6,7 +6,7 @@
   height: 100%;
   margin: 5rem 7.5vw;
   display: grid;
-  grid: 1fr 1.5fr 1fr / repeat(3, 1fr);
+  grid: 1fr 2fr 1fr / repeat(3, 1fr);
   grid-gap: 3.125rem;
   grid-template-areas:
           "head name mail"
@@ -53,8 +53,11 @@
     }
 
     input, textarea {
+      box-sizing: border-box;
       border-style: none;
       border-bottom: 0.125rem solid $field-underline;
+      font-family: $text-font;
+      font-size: 0.9rem;
       margin: 1rem 0 0 0;
       width: 17.5rem;
 
@@ -80,8 +83,21 @@
     grid-area: mail;
   }
 
-  .message-box {
+  .message-field {
     grid-area: mesg;
+  }
+
+  p {
+    font-family: $text-font;
+    font-size: 0.9rem;
+
+    &.error-message {
+      color: $error-red;
+    }
+
+    &.success-message {
+      color: $success-green;
+    }
   }
 
   button {

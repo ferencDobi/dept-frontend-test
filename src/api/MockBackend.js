@@ -21,6 +21,7 @@ module.exports = () => {
   };
 
   return {
-    cases: new Array(100).fill({}).map(_ => generateCase())
+    cases: new Array(100).fill({}).map(_ => generateCase()),
+    contact: []
   };
 };
