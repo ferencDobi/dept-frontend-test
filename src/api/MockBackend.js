@@ -16,7 +16,7 @@ module.exports = () => {
       id: chance.hash({length: 15}),
       name: chance.company(),
       title: chance.sentence(),
-      image: `https://picsum.photos/1400/940/?image=${chance.integer({min: 0, max: 1084})}`
+      image: `https://picsum.photos/800/500/?image=${chance.integer({min: 0, max: 1084})}`
     }
   };
 

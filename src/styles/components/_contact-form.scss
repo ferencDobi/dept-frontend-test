@@ -115,6 +115,10 @@
     height: 3.125rem;
     border: none;
 
+    &:hover, &:disabled {
+      transform: scale(0.95);
+    }
+
     @media screen and (max-width: 950px) {
       align-self: end;
       margin-bottom: 0.725rem;

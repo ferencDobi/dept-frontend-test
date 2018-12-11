@@ -1,6 +1,6 @@
 import React from "react";
 
-const fallbackImage = 'https://picsum.photos/1400/940/?random';
+const fallbackImage = 'https://picsum.photos/800/500/?random';
 
 export const Card = ({article}) => {
   return (

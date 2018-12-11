@@ -2,13 +2,14 @@ import React, {Component} from "react";
 import * as yup from 'yup';
 import {FormField} from "../presentational/FormField";
 import ContactApi from "../../api/ContactApi";
+import {LoadingIndicator} from "../presentational/LoadingIndicator";
 
 const text = 'Question? We are here to help!';
 
 export class ContactForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {...this.initialState, messages: []}
+    this.state = {...this.initialState, messages: [], loading: false}
   }
 
   initialState = {
@@ -49,6 +50,7 @@ export class ContactForm extends Component {
   };
 
   sendForm = formData => {
+    this.setState({ loading: true });
     ContactApi.sendMessage(formData).then(() => {
       this.setState({
         ...this.initialState,
@@ -59,6 +61,8 @@ export class ContactForm extends Component {
         messages: [{type: "error",  text: "An error has occurred. Please try again later."}]
       });
       console.error(error);
+    }).finally(() => {
+      this.setState({ loading: false });
     });
   };
 
@@ -79,7 +83,7 @@ export class ContactForm extends Component {
 
   render() {
     let fields = [this.state.name, this.state.email, this.state.message];
-    let messages = this.state.messages;
+    let { messages, loading } = this.state;
 
     return (
         <form className="contact-form" onSubmit={this.handleSubmit}>
@@ -87,7 +91,9 @@ export class ContactForm extends Component {
           {fields.map(field =>
               <FormField key={field.name} field={field} changeHandler={this.handleChange}/>
           )}
-          <button type="submit">Send</button>
+          <button type="submit" disabled={loading}>
+            {loading ? <LoadingIndicator/> : 'Send'}
+          </button>
           {messages.map((message, i) =>
               <p key={`message-${i}`} className={`${message.type}-message`}>{message.text}</p>
           )}

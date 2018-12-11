@@ -7,6 +7,12 @@ html {
 }
 
 button {
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
   &::-moz-focus-inner {
     border: 0;
   }
