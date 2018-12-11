@@ -66,6 +66,14 @@ export class ContactForm extends Component {
     });
   };
 
+  resetErrors = () => {
+    ["name", "email", "message"].forEach(field => {
+      this.setState({
+        [field]: Object.assign({}, this.state[field], {error: null})
+      });
+    });
+  };
+
   handleSubmit = event => {
     event.preventDefault();
     let formData = this.getFormData();
@@ -73,6 +81,7 @@ export class ContactForm extends Component {
     this.validateFields(formData).then(() => {
       this.sendForm(formData);
     }).catch(reason => {
+      this.resetErrors();
       reason.inner.forEach(field => {
         this.setState({
           [field.path]: Object.assign({}, this.state[field.path], {error: field.message})
