@@ -1,1 +1,2 @@
 export const LOAD_CASES = 'LOAD_CASES';
+export const LOAD_CATEGORIES = 'LOAD_CATEGORIES';

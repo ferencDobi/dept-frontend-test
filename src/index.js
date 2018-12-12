@@ -6,9 +6,11 @@ import './index.css';
 import App from './components/container/App';
 import * as serviceWorker from './serviceWorker';
 import {fetchCases} from "./actions/caseActions";
+import {fetchCategories} from "./actions/cetagoryActions";
 
 const store = configureStore({});
 store.dispatch(fetchCases(15));
+store.dispatch(fetchCategories());
 
 ReactDOM.render(
     <Provider store={store}>

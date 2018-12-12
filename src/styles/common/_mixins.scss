@@ -1,14 +1,34 @@
 @import './constants';
 
-@mixin right-arrow($size, $color) {
+%pseudo-element {
   content: "";
   font-size: 0;
   position: relative;
   width: 0;
   height: 0;
-  border-top: ($size / 2) solid transparent;
-  border-bottom: ($size / 2) solid transparent;
-  border-left: ($size * 0.866) solid $color;
+}
+
+@mixin arrow($direction, $size, $color) {
+  $horizontal: $direction == 'left' or $direction == 'right';
+  $opposite: (
+          'right': 'left',
+          'left:': 'right',
+          'top': 'bottom',
+          'bottom': 'top'
+  );
+
+  @extend %pseudo-element;
+  border-#{if($horizontal, 'top', 'right')}: ($size / 2) solid transparent;
+  border-#{if($horizontal, 'bottom', 'left')}: ($size / 2) solid transparent;
+  border-#{map_get($opposite, $direction)}: ($size * 0.866) solid $color;
+}
+
+@mixin right-arrow($size, $color) {
+  @include arrow('right', $size, $color);
+}
+
+@mixin down-arrow($size, $color) {
+  @include arrow('bottom', $size, $color);
 }
 
 @mixin arrow-on-hover($size) {
