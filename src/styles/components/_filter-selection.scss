@@ -4,45 +4,70 @@
 .filter-selection {
   float: right;
   margin: 2rem 7.5vw;
+  display: flex;
 
-  h3 {
-    font: {
-      size: 1.875rem;
-      family: $heading-font;
-      weight: 400;
-    }
-    color: $line-color;
-    display: inline;
-    margin-right: 0.25rem;
+  @media screen and (max-width: 700px) {
+    margin: 2rem 10vw;
+    flex-direction: column;
+    align-items: flex-end;
   }
 
-  .select-wrapper {
+  > div {
     display: inline;
-    font: {
-      size: 1.875rem;
-      family: $heading-font;
-      weight: 500;
+
+    @media screen and (max-width: 700px) {
+      display: block;
+      width: fit-content;
     }
-    color: $primary-color;
-    position: relative;
 
-    span {
-      padding-right: 1rem;
+    %selection-font {
+      font: {
+        size: 1.875rem;
+        family: $heading-font;
+      }
 
-      &::after {
-        @include down-arrow(0.5rem, $primary-color);
-        top: -0.25rem;
-        right: -0.35rem;
+      @media screen and (max-width: 700px) {
+        font-size: 1.5rem;
+      }
+
+      @media screen and (max-width: 400px) {
+        font-size: 1.25rem;
       }
     }
 
-    select {
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      cursor: pointer;
-      width: 100%;
+    h3 {
+      @extend %selection-font;
+      font-weight: 400;
+      color: $line-color;
+      display: inline;
+      margin-right: 0.25rem;
+    }
+
+    .select-wrapper {
+      @extend %selection-font;
+      font-weight: 500;
+      color: $primary-color;
+      display: inline;
+      position: relative;
+
+      span {
+        padding-right: 1rem;
+
+        &::after {
+          @include down-arrow(0.5rem, $primary-color);
+          top: -0.25rem;
+          right: -0.35rem;
+        }
+      }
+
+      select {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        width: 100%;
+      }
     }
   }
 }

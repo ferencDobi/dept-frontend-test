@@ -19,12 +19,16 @@ class FilterSelection extends Component {
 
     return (
         <div className="filter-selection">
-          <h3>Show me</h3>
-          <Select title="all work" select={selectJob}
-                  selected={selectedJob} options={this.props.jobs} />
-          <h3>in</h3>
-          <Select title="all industries" select={selectIndustry}
-                  selected={selectedIndustry} options={this.props.industries} />
+          <div>
+            <h3>Show me</h3>
+            <Select title="all work" select={selectJob}
+                    selected={selectedJob} options={this.props.jobs} />
+          </div>
+          <div>
+            <h3>in</h3>
+            <Select title="all industries" select={selectIndustry}
+                    selected={selectedIndustry} options={this.props.industries} />
+          </div>
         </div>
     );
   }
