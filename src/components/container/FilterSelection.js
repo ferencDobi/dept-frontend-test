@@ -30,10 +30,22 @@ class FilterSelection extends Component {
   }
 }
 
-const mapStateToProps = ({selection}) => {
+const filterJobs = (categories, selectedIndustry) => {
+  let filtered = selectedIndustry ? categories.filter(category => category.industry === selectedIndustry) : categories;
+  return filtered.map(category => category.job);
+};
+
+const filterIndustries = (categories, selectedJob) => {
+  let filtered = selectedJob ? categories.filter(category => category.job === selectedJob) : categories;
+  return [...new Set(filtered.map(category => category.industry))];
+};
+
+const mapStateToProps = state => {
+  let selection = state.selection;
+
   return {
-    jobs: selection.categories.map(category => category.job),
-    industries: [...new Set(selection.categories.map(category => category.industry))],
+    jobs: filterJobs(selection.categories, selection.selectedIndustry),
+    industries: filterIndustries(selection.categories, selection.selectedJob),
     selectedJob: selection.selectedJob,
     selectedIndustry: selection.selectedIndustry
   };
