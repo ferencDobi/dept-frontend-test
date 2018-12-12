@@ -12,3 +12,11 @@ export const fetchCategories = () => {
     }).catch(error => console.error(error));
   };
 };
+
+export const selectJob = job => {
+  return { type: actions.FILTER_FOR_JOB, job };
+};
+
+export const selectIndustry = industry => {
+  return { type: actions.FILTER_FOR_INDUSTRY, industry };
+};

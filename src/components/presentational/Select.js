@@ -1,23 +1,18 @@
 import React, {Component} from 'react';
 
 export class Select extends Component {
-  state = {
-    value: this.props.placeholder
-  };
-
   selectOption = event => {
-    this.setState({value: event.target.value});
+    this.props.select(event.target.value);
   };
 
   render() {
-    let {placeholder, options} = this.props;
-    let value = this.state.value;
+    let {title, selected, options} = this.props;
 
     return (
         <div className="select-wrapper">
-          <span>{value}</span>
-          <select value={value} onChange={this.selectOption}>
-            <option value="">{placeholder}</option>
+          <span>{selected ? selected : title}</span>
+          <select value={selected ? selected : title} onChange={this.selectOption}>
+            <option value="">{title}</option>
             {options.map(option =>
                 <option key={option} value={option}>{option}</option>
             )}

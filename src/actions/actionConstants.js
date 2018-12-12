@@ -1,2 +1,4 @@
 export const LOAD_CASES = 'LOAD_CASES';
 export const LOAD_CATEGORIES = 'LOAD_CATEGORIES';
+export const FILTER_FOR_JOB = 'FILTER_FOR_JOB';
+export const FILTER_FOR_INDUSTRY = 'FILTER_FOR_INDUSTRY';

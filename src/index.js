@@ -6,7 +6,7 @@ import './index.css';
 import App from './components/container/App';
 import * as serviceWorker from './serviceWorker';
 import {fetchCases} from "./actions/caseActions";
-import {fetchCategories} from "./actions/cetagoryActions";
+import {fetchCategories} from "./actions/categoryActions";
 
 const store = configureStore({});
 store.dispatch(fetchCases(15));
