@@ -2,8 +2,18 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import {Select} from "../presentational/Select";
 import {selectIndustry, selectJob} from "../../actions/categoryActions";
+import {fetchCasesByCategory} from "../../actions/caseActions";
 
 class FilterSelection extends Component {
+  getSnapshotBeforeUpdate(prevProps) {
+    let { selectedJob, selectedIndustry } = this.props;
+
+    if (prevProps.selectedJob !== selectedJob ||
+        prevProps.selectedIndustry !== selectedIndustry) {
+      this.props.fetchCasesByCategory(selectedJob, selectedIndustry, 15);
+    }
+  }
+
   render() {
     let { selectJob, selectedJob, selectIndustry, selectedIndustry } = this.props;
 
@@ -39,6 +49,10 @@ const mapDispatchToProps = (dispatch) => {
     selectIndustry: industry => {
       if (industry === "all industries") industry = null;
       dispatch(selectIndustry(industry));
+    },
+
+    fetchCasesByCategory: (job, industry, limit) => {
+      dispatch(fetchCasesByCategory(job, industry, limit));
     }
   }
 };

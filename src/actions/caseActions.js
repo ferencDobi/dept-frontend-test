@@ -12,3 +12,11 @@ export const fetchCases = limit => {
     }).catch(error => console.error(error));
   };
 };
+
+export const fetchCasesByCategory = (job, industry, limit) => {
+  return dispatch => {
+    return ContentApi.fetchCasesByCategory(job, industry, limit).then(response => {
+      dispatch(loadCases(response.data));
+    }).catch(error => console.error(error));
+  };
+};
